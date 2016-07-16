@@ -90,8 +90,8 @@
 	</div>
 	<!--  할인/주문/검색 -->
 	<div class="row">
-		<div class="col-md-2 col-xs-2"></div>
-		<div class="col-md-8 col-xs-8">
+		<div class="col-md-2 col-xs-1"></div>
+		<div class="col-md-8 col-xs-10">
 			<!--  할인/예약/주문 -->
 			<div class="col-md-12 col-xs-12 content-container">
 				<div class="col-md-4 col-xs-12 img-wrapper1">
@@ -163,7 +163,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-2 col-xs-2"></div>
+		<div class="col-md-2 col-xs-1"></div>
 	</div>
 
 	<!-- footer -->
