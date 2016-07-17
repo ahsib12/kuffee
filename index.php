@@ -23,7 +23,7 @@
 </style>
 
 <body>
-	<?php include "navbar.php";?>
+	<?php include "src/navbar.php";?>
 	
 	<div class="row">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
