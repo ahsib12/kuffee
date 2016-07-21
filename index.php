@@ -104,22 +104,22 @@
 					<strong>지역 바로 찾아가기</strong>
 				</div>
 				<div class="col-md-12 col-xs-12">
-					<div class="col-md-4 col-xs-12 img-wrapper2">
+					<div class="col-md-4 col-xs-6 img-wrapper2">
 						<img src="img/icon/1.png">
 					</div>
-					<div class="col-md-4 col-xs-12 img-wrapper2">
+					<div class="col-md-4 col-xs-6 img-wrapper2">
 						<img src="img/icon/2.png">
 					</div>
-					<div class="col-md-4 col-xs-12 img-wrapper2">
+					<div class="col-md-4 col-xs-6 img-wrapper2">
 						<img src="img/icon/3.png">
 					</div>
-					<div class="col-md-4 col-xs-12 img-wrapper2">
+					<div class="col-md-4 col-xs-6 img-wrapper2">
 						<img src="img/icon/4.png">
 					</div>
-					<div class="col-md-4 col-xs-12 img-wrapper2">
+					<div class="col-md-4 col-xs-6 img-wrapper2">
 						<img src="img/icon/5.png">
 					</div>
-					<div class="col-md-4 col-xs-12 img-wrapper2">
+					<div class="col-md-4 col-xs-6 img-wrapper2">
 						<img src="img/icon/6.png">
 					</div>
 				</div>
