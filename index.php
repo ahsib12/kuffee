@@ -1,4 +1,5 @@
 	<?php include "src/header.php";?>
+
 </head>
 
 <script>
@@ -15,6 +16,43 @@
    	});
 </script>
 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- 스크롤탑을 위한 자바스크립트 -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("a.anchorLink").anchorAnimate()
+});
+
+jQuery.fn.anchorAnimate = function(settings) {
+	settings = jQuery.extend({
+	speed : 1100
+	}, settings);    
+     
+	return this.each(function(){
+		var caller = this
+		$(caller).click(function (event) {    
+             event.preventDefault()
+             var locationHref = window.location.href
+             var elementClick = $(caller).attr("href")
+             
+             var destination = $(elementClick).offset().top;
+             $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination}, settings.speed, function() {
+                 window.location.hash = elementClick
+             });
+               return false;
+        })
+    })
+}
+</script>
+
+
+
+
+
 <style>
 	/* 991px 가 화면이 바뀌는 기준픽셀*/
 	@media screen and (max-width:991px){
@@ -22,7 +60,44 @@
 	}
 </style>
 
-<body>
+<style>
+	/* 400px 가 화면이 바뀌는 기준픽셀 - 로고텍스트*/
+	@media screen and (max-width:400px){
+		.reduce-text {font-size :0.8em;}
+	}
+</style>
+
+<style>
+	/* 386px 가 화면이 바뀌는 기준픽셀 - 로고이미지*/
+	@media screen and (max-width:386px){
+		.reduce-image {width : 100%}
+	}
+</style>
+
+
+<style>
+	/* 460px 가 화면이 바뀌는 기준픽셀 - 지역바로가기 이미지 */
+	@media screen and (max-width:460px){
+		.reduce-image2 {width : 60%;}
+	}
+</style>
+
+<style>
+	/* 460px 가 화면이 바뀌는 기준픽셀 - 좌우 패딩 0으로 만들기 */
+	@media screen and (max-width:460px){
+		.reduce-padding {padding-left: 0px;padding-right: 0px;}
+	}
+</style>
+
+<style>
+	/* 767px 가 화면이 바뀌는 기준픽셀 - 네비게이션바 고정하기 */
+	@media screen and (max-width:767){
+		.reduce-padding {padding-left: 0px;padding-right: 0px;}
+	}
+</style>
+	
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<?php include "src/navbar.php";?>
 	
 	<div class="row">
@@ -65,14 +140,18 @@
 			</a>
 		</div>
 	</div>
+	
+	
 	<!--  할인/주문/검색 -->
+	
 	<div class="row">
 		<div class="col-md-2 col-xs-1"></div>
-		<div class="col-md-8 col-xs-10">
+		<div class="col-md-8 col-xs-10 reduce-padding">
 			<!--  할인/예약/주문 -->
 			<div class="col-md-12 col-xs-12 content-container">
+				<a id="about"></a>
 				<div class="col-md-4 col-xs-12 img-wrapper1">
-					<img src="img/icon/1_3.png">
+					<img src="img/icon/1_3.png" >
 					<div>
 						<h3><strong>10% 할인</strong></h3>
 						KUFFEE 제휴카페를 검색하고<br>
@@ -99,44 +178,45 @@
 				</div>
 			</div>
 			<!--  지역별로 찾아가기 -->
-			<div class="col-md-12 col-xs-12 content-container">
-				<div class="col-md-12 col-xs-12 banner">
+			<div class="col-md-12 col-xs-12 content-container reduce-padding">
+				<a id="contents"></a>
+				<div class="col-md-12 col-xs-12 banner reduce-padding">
 					<strong>지역 바로 찾아가기</strong>
 				</div>
-				<div class="col-md-12 col-xs-12">
-					<div class="col-md-4 col-xs-6 img-wrapper2">
-						<img src="img/icon/1.png">
+				<div class="col-md-12 col-xs-12 reduce-padding">
+					<div class="col-md-4 col-xs-6 img-wrapper2 reduce-image reduce-padding" style="padding-top: 15px; padding-bottom: 0px;">
+						<a href="/src/cafe_list.php?region=1"><img class="reduce-image2" src="img/icon/1.png"></a>
 					</div>
-					<div class="col-md-4 col-xs-6 img-wrapper2">
-						<img src="img/icon/2.png">
+					<div class="col-md-4 col-xs-6 img-wrapper2 reduce-image reduce-padding" style="padding-top: 15px; padding-bottom: 0px;">
+						<a href="/src/cafe_list.php?region=2"><img class="reduce-image2" src="img/icon/2.png"></a>
 					</div>
-					<div class="col-md-4 col-xs-6 img-wrapper2">
-						<img src="img/icon/3.png">
+					<div class="col-md-4 col-xs-6 img-wrapper2 reduce-image reduce-padding" style="padding-top: 15px; padding-bottom: 0px;">
+						<a href="/src/cafe_list.php?region=3"><img class="reduce-image2" src="img/icon/3.png"></a>
 					</div>
-					<div class="col-md-4 col-xs-6 img-wrapper2">
-						<img src="img/icon/4.png">
+					<div class="col-md-4 col-xs-6 img-wrapper2 reduce-image reduce-padding" style="padding-top: 15px; padding-bottom: 0px;">
+						<a href="/src/cafe_list.php?region=4"><img class="reduce-image2" src="img/icon/4.png"></a>
 					</div>
-					<div class="col-md-4 col-xs-6 img-wrapper2">
-						<img src="img/icon/5.png">
+					<div class="col-md-4 col-xs-6 img-wrapper2 reduce-image reduce-padding" style="padding-top: 15px; padding-bottom: 0px;">
+						<a href="/src/cafe_list.php?region=5"><img class="reduce-image2" src="img/icon/5.png"></a>
 					</div>
-					<div class="col-md-4 col-xs-6 img-wrapper2">
-						<img src="img/icon/6.png">
+					<div class="col-md-4 col-xs-6 img-wrapper2 reduce-image reduce-padding" style="padding-top: 15px; padding-bottom: 0px;">
+						<a href="/src/cafe_list.php?region=6"><img class="reduce-image2" src="img/icon/6.png"></a>
 					</div>
 				</div>
 			</div>
 			<!--  Contact us -->
-			<div class="col-md-12 col-xs-12 content-container">
-				<div class="col-md-4 col-xs-4">
-					<img src="/img/logo.png" style="width:80%;">
+			<div class="col-md-12 col-xs-12 content-container" style = "padding-top: 40px;">
+				<a id="contact"></a>
+				<div class = "banner" style="text-align:center; margin-bottom:40px">
+					<font color="black"><strong>Please contact us</strong><br><font size="4">if you have any further questions and suggestions<h3></font></font>
 				</div>
-				<div class="col-md-8 col-xs-8">
-					<h3>
-						Please contact us<br> if you have any further questions and
-						suggestions
-					</h3>
-					<p>
-						<br>KUFFEE <br>General Directer / 최병준 <br>010-5353-5210 <br>cbj5210@nate.com
-					</p>
+				<div class="col-md-6 col-xs-6 img-wrapper1 reduce-padding" style ="margin-top:0px; margin-bottom: 0px;text-align:right">
+						<img class = "reduce-image" src="/img/logo.png" >
+				</div>
+				<div class="col-md-6 col-xs-6 reduce-text reduce-padding" style="padding-left:40px; padding-top:27px;" >
+					<div style="text-align:left;">
+						<strong>KUFFEE <br>General Directer<br>/ 최병준 <br>010-5353-5210 <br>cbj5210@nate.com</strong>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
 <?php
     function dbconnect($host,$id,$pass,$db)  //데이터베이스 연결
     { 
-        $connect=mysql_connect($host,$id,$pass);
+        $connect=@mysql_connect($host,$id,$pass);
         mysql_select_db($db);
         return $connect;
     }

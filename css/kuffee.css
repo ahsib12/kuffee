@@ -2,6 +2,7 @@ body { padding-top:50px; }
 
 /* Body */
 .content-container { padding:60px 0px; border-bottom:3px solid #EFEFEF; }
+.content-container-cafe-list { padding:30px 0px; border-bottom:3px solid #EFEFEF; }
 .img-wrapper1 { text-align:center; vertical-align:middle; }
 .img-wrapper1 img { display:inline; }
 .img-wrapper1 div { padding:10px 0px; color:#EE475B; font-size:11pt; text-align:center; }
