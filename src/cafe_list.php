@@ -1,4 +1,4 @@
-<?php include "header.php";?>
+﻿<?php include "header.php";?>
 </head>
 
 <script>
@@ -79,8 +79,19 @@
 	mysql_query("set session character_set_results=utf8;");
 	mysql_query("set session character_set_client=utf8;");
 	
-	$query1 = 'select * from ku_cafe where region =' . $region;
-	$result = mysql_query($query1, $connect);
+	$query = 'select * from ku_cafe where region =' . $region;
+	
+	if (array_key_exists("search_keyword", $_POST)) {  // array_key_exists() : Checks if the specified key exists in the array
+        $search_keyword = $_POST["search_keyword"];
+        $query =  "select * from ku_cafe where name like '%$search_keyword%' or location like '%$search_keyword%'";
+    }
+	
+	$result = mysql_query($query, $connect);
+	
+	if (!$result) {
+        die('Query Error : ' . mysql_error());
+    }
+	
 	$array = mysql_fetch_array($result);
 	
 ?>

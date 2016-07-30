@@ -16,12 +16,29 @@
    	});
 </script>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--dropdown 밖의 화면 눌렀을때 dropdown 도로 올라가도록-->
+<script>
+$(document).click(function (event) {
+    var clickover = $(event.target);
+    var $navbar = $(".navbar-collapse");               
+    var _opened = $navbar.hasClass("in");
+    if (_opened === true && !clickover.hasClass("navbar-toggle")) {      
+        $navbar.collapse('hide');
+    }
+});
+</script>
+
+
+<!--dropdown에서 list 눌렀을때 dropdown 도로 올라가도록-->
+<script>
+$(document).ready(function () {
+  $(".navbar-nav li .anchorLink").click(function(event) {
+    $(".navbar-collapse").collapse('hide');
+  });
+});
+</script>
 
 <!-- 스크롤탑을 위한 자바스크립트 -->
-
 <script type="text/javascript">
 $(document).ready(function() {
 	$("a.anchorLink").anchorAnimate()
@@ -48,10 +65,6 @@ jQuery.fn.anchorAnimate = function(settings) {
     })
 }
 </script>
-
-
-
-
 
 <style>
 	/* 991px 가 화면이 바뀌는 기준픽셀*/
@@ -93,6 +106,13 @@ jQuery.fn.anchorAnimate = function(settings) {
 	/* 767px 가 화면이 바뀌는 기준픽셀 - 네비게이션바 고정하기 */
 	@media screen and (max-width:767){
 		.reduce-padding {padding-left: 0px;padding-right: 0px;}
+	}
+</style>
+
+<style>
+	/* 991px 가 화면이 바뀌는 기준픽셀*/
+	@media screen and (max-width:991px){
+		.navbar-search { padding-left: 25px;}
 	}
 </style>
 	
@@ -143,13 +163,12 @@ jQuery.fn.anchorAnimate = function(settings) {
 	
 	
 	<!--  할인/주문/검색 -->
-	
+	<a id="about"></a>
 	<div class="row">
 		<div class="col-md-2 col-xs-1"></div>
 		<div class="col-md-8 col-xs-10 reduce-padding">
 			<!--  할인/예약/주문 -->
 			<div class="col-md-12 col-xs-12 content-container">
-				<a id="about"></a>
 				<div class="col-md-4 col-xs-12 img-wrapper1">
 					<img src="img/icon/1_3.png" >
 					<div>
@@ -177,9 +196,16 @@ jQuery.fn.anchorAnimate = function(settings) {
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
+	</div>
+	
+	<a id="contents"></a>
+	<div class="row">
+		<div class="col-md-2 col-xs-1"></div>
+		<div class="col-md-8 col-xs-10 reduce-padding">
 			<!--  지역별로 찾아가기 -->
 			<div class="col-md-12 col-xs-12 content-container reduce-padding">
-				<a id="contents"></a>
 				<div class="col-md-12 col-xs-12 banner reduce-padding">
 					<strong>지역 바로 찾아가기</strong>
 				</div>
@@ -204,24 +230,34 @@ jQuery.fn.anchorAnimate = function(settings) {
 					</div>
 				</div>
 			</div>
+		</div>
+		</div>
+	</div>
+	
+	<a id="contact"></a>
+	<div class="row">
+		<div class="col-md-2 col-xs-1"></div>
+		<div class="col-md-8 col-xs-10 reduce-padding">
 			<!--  Contact us -->
 			<div class="col-md-12 col-xs-12 content-container" style = "padding-top: 40px;">
-				<a id="contact"></a>
-				<div class = "banner" style="text-align:center; margin-bottom:40px">
-					<font color="black"><strong>Please contact us</strong><br><font size="4">if you have any further questions and suggestions<h3></font></font>
+				<div class = "banner" style="text-align:center; margin-bottom:15px;">
+					<font color="black" style="font-size:130%"><strong>Please contact us</strong></font>
+				</div>
+				<div style="text-align:center; margin-bottom:30px;">
+				<font size="4">if you have any further questions and suggestions</font>
 				</div>
 				<div class="col-md-6 col-xs-6 img-wrapper1 reduce-padding" style ="margin-top:0px; margin-bottom: 0px;text-align:right">
 						<img class = "reduce-image" src="/img/logo.png" >
 				</div>
 				<div class="col-md-6 col-xs-6 reduce-text reduce-padding" style="padding-left:40px; padding-top:27px;" >
 					<div style="text-align:left;">
-						<strong>KUFFEE <br>General Directer<br>/ 최병준 <br>010-5353-5210 <br>cbj5210@nate.com</strong>
+						<strong>KUFFEE <br>General Directer<br>최병준 <br>010-5353-5210 <br>cbj5210@nate.com</strong>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-2 col-xs-1"></div>
 	</div>
-
+	
 	<!-- footer -->
 	<?php include "src/footer.php";?>
