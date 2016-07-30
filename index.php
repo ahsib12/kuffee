@@ -2,20 +2,6 @@
 
 </head>
 
-<script>
-   	$(function(){
-   	   	var before_img = null;   	   	
-   		$(".img-wrapper2").on("mouseover","img", function(){
-   	   		// 이미지에 value 값을 할당해서 무슨 이미지인지 파악하는 방향으로 진행
-   	   		before_img = $(this).attr("src");
-   	   		$(this).attr("src","img/icon/1_1.png");
-   		});
-   		$(".img-wrapper2").on("mouseout","img", function(){
-   	   		$(this).attr("src",before_img);
-   		});
-   	});
-</script>
-
 <!--dropdown 밖의 화면 눌렀을때 dropdown 도로 올라가도록-->
 <script>
 $(document).click(function (event) {
