@@ -24,48 +24,11 @@
 
 <body>
 	<?php include "navbar.php";?>
-	
 	<div class="row">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img class="slide" src="/img/img1.jpg" alt="First slide" style="width:100%">
-					<div class="container">
-						<div class="carousel-caption">
-							<!--  HTML 삽입 -->
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<img class="slide" src="/img/img2.jpg" alt="Second slide" style="width:100%">
-					<div class="container">
-						<div class="carousel-caption"></div>
-					</div>
-				</div>
-				<div class="item">
-					<img class="slide" src="/img/img3.jpg" alt="Third slide" style="width:100%">
-					<div class="container">
-						<div class="carousel-caption"></div>
-					</div>
-				</div>
-			</div>
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> 
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
-				<span class="sr-only">Previous</span>
-			</a> 
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> 
-				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
+		<div class="col-md-12 col-xs-12" style = "padding : 0px;">
+			<img src="../img/cafe_list_img.jpg" style = " width :100%; height : 200px;">
 		</div>
 	</div>
-
 	
 <?
 	include "config.php";
@@ -103,10 +66,10 @@
 			<div class="col-md-8 col-xs-10">
 			<div class="col-md-12 col-xs-12 banner" style = "padding:40px 0px 20px ;">
 				
-				<?echo '<strong>'.$array[4].'</strong>';?>
+				<p style ="color : #446ba1;"><?echo '<strong>'.$array[4].'</strong>';?></p>
 			</div>
-			<div class="col-md-12 col-xs-12"  style="text-align:center; padding : 0px 0px 40px 0px;">
-			<font color="black">고려대학교의 대표적인 거리로써 다양한 맛집과 문화생화을 즐길 수 있는 거리이다. 매년 정기 고연전 시기에 연세대와 응원 현수막이 붙는거로 유명하다.</font>
+			<div class="col-md-12 col-xs-12"  style="text-align:center; padding : 0px 0px 30px 0px;">
+			<font color="black">고려대학교의 대표적인 거리로써 다양한 맛집과 문화생화을 즐길 수 있는 거리이다.<br>매년 정기 고연전 시기에 연세대와 응원 현수막이 붙는거로 유명하다.</font>
 			</div>
 		
 			<!--  1번째 상점들 -->
@@ -115,8 +78,7 @@
 				<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
-						
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
 						<? echo '전화번호 : '.$array[3] ;?>
@@ -129,7 +91,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
@@ -145,7 +107,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
@@ -158,7 +120,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
@@ -175,7 +137,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
@@ -189,7 +151,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
@@ -205,7 +167,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
@@ -219,7 +181,7 @@
 				<div class="col-md-6 col-xs-6 img-wrapper1">
 					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
 					<? echo '<img src="'.$array[1].'">';?>
-					<div><font color="black">
+					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
 						
 						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
 						<? echo '위치 : '.$array[4].'<br>';?>
