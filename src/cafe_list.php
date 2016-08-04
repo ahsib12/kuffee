@@ -23,7 +23,7 @@
 </style>
 
 <body>
-	<?php include "navbar.php";?>
+	<?php include "navbar_cafe_list.php";?>
 	<div class="row">
 		<div class="col-md-12 col-xs-12" style = "padding : 0px;">
 			<img src="../img/cafe_list_img.jpg" style = " width :100%; height : 200px;">

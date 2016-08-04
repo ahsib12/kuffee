@@ -15,8 +15,8 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" onclick="$('html, body').stop().animate( { scrollTop : 0 } ); " class="anchorLink">Home</a></li>
-				<li><a href="#about" class="anchorLink">Advantages</a></li>
 				<li><a href="#contents" class="anchorLink">Region</a></li>
+				<li><a href="#about" class="anchorLink">Advantages</a></li>
 				<li><a href="#contact" class="anchorLink">Contact</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search<span class="caret"></span></a>
@@ -25,15 +25,11 @@
 						<li><a href="#">24시간카페</a></li>
 						<li><a href="#">Wifi카페</a></li>
 						<li><a href="#">주차장보유카페</a></li>
-						<div style ="padding-left: 25px;" class="col-lg-12 col-xs-12 navbar-search" >
 						<li>
-							<form class="navbar-form col-lg-9 col-xs-12" action="cafe_list.php" 
-							style = "border-top-width: 0px; border-bottom-width: 0px; margin-top: 0px; margin-bottom:0px;">
-								<input type="text" name="search" class="form-control" placeholder="Search...">
-							</form>
-
+						<form class="navbar-form" style = "margin : auto; padding-left: 19px;">
+							<input type="text" class="form-control" style="margin : auto" placeholder="Search...">
+						</form>
 						</li>
-						</div>
 					</ul>
                 </li>
 			</ul>

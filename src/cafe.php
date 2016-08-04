@@ -35,7 +35,7 @@
 	</script> 
 </head>
  <body>
-<?php include "navbar.php";?>
+<?php include "navbar_cafe.php";?>
 
 <div class="row">
 	<div id="main_img_container" class="col-lg-12 col-md-12 col-xs-12">
