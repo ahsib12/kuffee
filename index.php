@@ -3,7 +3,7 @@
 
 </head>
 
-
+<!--dropdown 밖의 화면 눌렀을때 dropdown 도로 올라가도록-->
 <script>
 $(document).click(function (event) {
     var clickover = $(event.target);
@@ -16,7 +16,7 @@ $(document).click(function (event) {
 </script>
 
 
-
+<!--dropdown에서 list 눌렀을때 dropdown 도로 올라가도록-->
 <script>
 $(document).ready(function () {
   $(".navbar-nav li .anchorLink").click(function(event) {
@@ -25,7 +25,7 @@ $(document).ready(function () {
 });
 </script>
 
-
+<!-- 스크롤탑을 위한 자바스크립트 -->
 <script type="text/javascript">
 $(document).ready(function() {
 	$("a.anchorLink").anchorAnimate()
@@ -109,7 +109,7 @@ jQuery.fn.anchorAnimate = function(settings) {
 	
 	<div class="row">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			
+			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
@@ -120,7 +120,7 @@ jQuery.fn.anchorAnimate = function(settings) {
 					<img class="slide" src="/img/img1.jpg" alt="First slide" style="width:100%">
 					<div class="container">
 						<div class="carousel-caption">
-						
+							<!--  HTML 삽입 -->
 						</div>
 					</div>
 				</div>
@@ -155,7 +155,7 @@ jQuery.fn.anchorAnimate = function(settings) {
 	<div class="row">
 		<div class="col-md-2 col-xs-1"></div>
 		<div class="col-md-8 col-xs-10 reduce-padding">
-			
+			<!--  지역별로 찾아가기 -->
 			<div class="col-md-12 col-xs-12 content-container reduce-padding">
 				<div class="col-md-12 col-xs-12 banner reduce-padding">
 					<strong>지역 바로 찾아가기</strong>
@@ -187,12 +187,12 @@ jQuery.fn.anchorAnimate = function(settings) {
 	
 	
 	
-
+	<!--  할인/주문/검색 -->
 	<a id="about"></a>
 	<div class="row">
 		<div class="col-md-2 col-xs-1"></div>
 		<div class="col-md-8 col-xs-10 reduce-padding">
-			
+			<!--  할인/예약/주문 -->
 			<div class="col-md-12 col-xs-12 content-container">
 				<div class="col-md-4 col-xs-12 img-wrapper1">
 					<img src="img/icon/1_3.png" >
@@ -231,7 +231,7 @@ jQuery.fn.anchorAnimate = function(settings) {
 	<div class="row">
 		<div class="col-md-2 col-xs-1"></div>
 		<div class="col-md-8 col-xs-10 reduce-padding">
-			
+			<!--  Contact us -->
 			<div class="col-md-12 col-xs-12 content-container" style = "padding-top: 40px;">
 				<div class = "banner" style="text-align:center; margin-bottom:15px;">
 					<font color="black" style="font-size:130%"><strong>Please contact us</strong></font>
@@ -252,8 +252,5 @@ jQuery.fn.anchorAnimate = function(settings) {
 		<div class="col-md-2 col-xs-1"></div>
 	</div>
 	
-
+	<!-- footer -->
 	<?php include "src/footer.php";?>
-
-
-<!--	<meta http-equiv='refresh' content='0;url=example/index.php'>-->
