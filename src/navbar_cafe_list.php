@@ -26,8 +26,8 @@
 						<li><a href="#">Wifi카페</a></li>
 						<li><a href="#">주차장보유카페</a></li>
 						<li>
-						<form class="navbar-form" style = "margin : auto; padding-left: 19px;">
-							<input type="text" class="form-control" style="margin : auto" placeholder="Search...">
+						<form class="navbar-form" style = "margin : auto; padding-left: 19px;" action = "cafe_list.php" method = "post">
+							<input type="text" class="form-control" style="margin : auto" placeholder="Search..." name = "search_keyword">
 						</form>
 						</li>
 					</ul>

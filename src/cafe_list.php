@@ -22,7 +22,7 @@
 	}
 </style>
 
-<body>
+<body style="overflow-x:hidden">
 	<?php include "navbar_cafe_list.php";?>
 	<div class="row">
 		<div class="col-md-12 col-xs-12" style = "padding : 0px;">
@@ -34,6 +34,10 @@
 	include "config.php";
 	include "util.php"; 
 
+	
+	$divide_2=0;
+	$rigion = 0;
+	
 	$region = $_REQUEST['region'];
 		
 	$connect = dbconnect($host,$dbid,$dbpass,$dbname);
@@ -51,149 +55,100 @@
 	
 	$result = mysql_query($query, $connect);
 	
-	if (!$result) {
-        die('Query Error : ' . mysql_error());
+	$row_num = mysql_num_rows($result);
+	
+	if (!$row_num) {
+        msg("입력하신 검색어에 해당하는 내용이 없습니다.");
     }
 	
-	$array = mysql_fetch_array($result);
+	if($row_num % 2 == 0){
+		$divide_2 = $row_num/2;
+		$innerfor_index = 2;
+	}
+	else{
+		$divide_2 = $row_num/2 + 0.5;
+		$innerfor_index = 1;
+	}
 	
 ?>
 	
 				
-	<a name="about" id="about">
-		<div class="row">
-			<div class="col-md-2 col-xs-1"></div>
-			<div class="col-md-8 col-xs-10">
-			<div class="col-md-12 col-xs-12 banner" style = "padding:40px 0px 20px ;">
-				
-				<p style ="color : #446ba1;"><?echo '<strong>'.$array[4].'</strong>';?></p>
-			</div>
-			<div class="col-md-12 col-xs-12"  style="text-align:center; padding : 0px 0px 30px 0px;">
-			<font color="black">고려대학교의 대표적인 거리로써 다양한 맛집과 문화생화을 즐길 수 있는 거리이다.<br>매년 정기 고연전 시기에 연세대와 응원 현수막이 붙는거로 유명하다.</font>
-			</div>
-		
-			<!--  1번째 상점들 -->
-			<div class="col-md-6 col-xs-12 content-container-cafe-list">
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-				<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-				
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-md-6 col-xs-12 content-container-cafe-list">
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-			</div>
-			
-			<!--  2번째 상점들 -->
-			<div class="col-md-6 col-xs-12 content-container-cafe-list">
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-				
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-md-6 col-xs-12 content-container-cafe-list">	
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-				
-				<? $array = mysql_fetch_array($result);?>
-				<div class="col-md-6 col-xs-6 img-wrapper1">
-					<? echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';?>
-					<? echo '<img src="'.$array[1].'">';?>
-					<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">
-						
-						<? echo '<h5><strong>'.$array[2].'</strong></h5>';?>
-						<? echo '위치 : '.$array[4].'<br>';?>
-						<? echo '전화번호 : '.$array[3] ;?>
-						</a>
-						</font>
-					</div>
-				</div>
-			</div>
-		</div>
+
+	<div class="row">
 		<div class="col-md-2 col-xs-1"></div>
+		<div class="col-md-8 col-xs-10">
+		<div class="col-md-12 col-xs-12 banner" style = "padding:40px 0px 20px ;">
+		
+		<?
+			if($region){
+				if($region == 1)
+					$title = "이과대학";
+				else if($region == 2)
+					$title = "문과대학";
+				else if($region == 3)
+					$title = "법대후문";
+				else if($region == 4)
+					$title = "정대후문";
+				else if($region == 5)
+					$title = "고대정문";
+				else if($region == 6)
+					$title = "참살이길";
+				
+			} else{
+				$title = "검색어 : ". $search_keyword;
+			}
+		?>
+			
+			<p style ="color : #446ba1;"><?echo '<strong>'.$title.'</strong>';?></p>
+		</div>
+
+
+
+		<?
+		for($j=1; $j <= $divide_2;$j++){
+			
+			echo '<div class="col-md-6 col-xs-12 content-container-cafe-list">';
+			
+			
+			
+			for($i=1 ; $i<=2 ; $i++){
+				/*
+				echo $j;
+				echo "j";
+				echo $i;
+				echo "i";
+				echo $divide_2;
+				echo "div";
+				echo $innerfor_index;
+				echo "in";
+				*/
+				if(($j == $divide_2) & ($innerfor_index == 1) & ($i==2)){
+					//echo "kkkkkkkkkkk";
+					break;
+				}
+				$array = mysql_fetch_array($result);
+				echo '<div class="col-md-6 col-xs-6 img-wrapper1">';
+				echo '<a href="cafe.php?cafe_no='.$array[0].'&region='.$region.'">';
+				echo '<img src="'.$array[1].'">';
+					echo '<div style="padding-bottom: 0px; font-size: .78em;"><font color="black">';
+						echo '<h5><strong>'.$array[2].'</strong></h5>';
+						echo '위치 : '.$array[4].'<br>';
+						echo '전화번호 : '.$array[3];
+						echo '</a>';
+						echo '</font>';
+					echo '</div>';
+				echo '</div>';
+			}
+			
+			echo '</div>';
+		}
+		?>
+
+	
+		</div>
+
 	</div>
+
 
 	<!-- footer -->
 	<?php include "footer.php";?>

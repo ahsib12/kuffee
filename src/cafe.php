@@ -34,7 +34,7 @@
 		} 
 	</script> 
 </head>
- <body>
+<body style="overflow-x:hidden">
 <?require_once "navbar_cafe.php";?>
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-xs-12">
