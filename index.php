@@ -197,10 +197,11 @@ jQuery.fn.anchorAnimate = function(settings) {
 				<div class="col-md-4 col-xs-12 img-wrapper1">
 					<img src="img/icon/1_3.png" >
 					<div>
-						<h3><strong>10% 할인</strong></h3>
+						<h3><strong>10% 할인 or Size UP</strong></h3>
 						KUFFEE 제휴카페를 검색하고<br>
 						주문시 해당 화면을 보여주세요<br>
-						1000원당 100원의 할인혜택
+						1000원당 100원의 할인혜택<br>
+						혹은 Size UP의 혜택이!
 					</div>
 				</div>
 				<div class="col-md-4 col-xs-12 img-wrapper1">

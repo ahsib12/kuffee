@@ -19,7 +19,7 @@
 				<li><a href="#about" class="anchorLink">Advantages</a></li>
 				<li><a href="#contact" class="anchorLink">Contact</a></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search<span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Search<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">예약주문가능카페</a></li>
 						<li><a href="#">24시간카페</a></li>

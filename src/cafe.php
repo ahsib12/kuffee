@@ -33,6 +33,13 @@
 			finestra=window.open(img,"",stringa); 
 		} 
 	</script> 
+	<style type="text/css">
+		a:link {color:white; text-decoration:none;}
+		a:visited {color:white; text-decoration:none;}
+		a:hover {color:white; text-decoration:none;}
+		a:active {color:white; text-decoration:none;}
+	</style>
+	
 </head>
 <body style="overflow-x:hidden">
 <?require_once "navbar_cafe.php";?>
@@ -63,11 +70,12 @@
 		$cafe_tel = $array1[3];
 		$cafe_location = $array1[4];
 		$cafe_notice = $array1[5];
+		$cafe_isCut = $array1[7];
 	?>
 
 	<div class="row">
-		<div class="col-md-4 col-xs-2"></div>
-		<div class="col-md-4 col-xs-8 content-container" style="text-align:center;">
+		<div class="col-md-2 col-xs-1"></div>
+		<div class="col-md-8 col-xs-10 content-container" style="text-align:center;">
 			<div class="cafe-content" style="color:black;">
 				<h1><strong><?=$cafe_name?></strong></h1>
 			</div>
@@ -75,7 +83,7 @@
 				<h3><strong>- Cafe Information -</strong></h3>
 				<br>
 				<div>Adress : 242, Cheomdam-ro, Jeju-si, Jeju-do, Koread</div>
-				<div><a href="tel:<?=$cafe_tel?>">TEL : <?=$cafe_tel?></a></div>
+				<div>TEL : <?=$cafe_tel?></div>
 			</div>
 			<div class="cafe-content">
 				<h3><strong>- Cafe Intro -</strong></h3>
@@ -83,18 +91,39 @@
 			</div>
 			<div class="cafe-content">
 				<div class="row">
-					<div class="col-md-3 col-xs-3"><img src="/img/cafe_information/ca.png"></div>
-					<div class="col-md-3 col-xs-3"><img src="/img/cafe_information/wi.png"></div>
-					<div class="col-md-3 col-xs-3"><img src="/img/cafe_information/24.png"></div>
-					<div class="col-md-3 col-xs-3"><img src="/img/cafe_information/pa.png"></div>
+					<div class="col-md-1 col-xs-1"></div>
+					<?if($cafe_isCut == 1){
+						echo '<div class="col-md-2 col-xs-2"><img src="/img/cafe_information/cut10percent.png"></div>';
+					} else {
+						echo '<div class="col-md-2 col-xs-2"><img src="/img/cafe_information/sizeup.png"></div>';
+					}?>
+					<div class="col-md-2 col-xs-2"><img src="/img/cafe_information/soket.png"></div>
+					<div class="col-md-2 col-xs-2"><img src="/img/cafe_information/wifi.png"></div>
+					<div class="col-md-2 col-xs-2"><img src="/img/cafe_information/24hour_gray.png"></div>
+					<div class="col-md-2 col-xs-2"><img src="/img/cafe_information/parking_gray.png"></div>
+					<div class="col-md-1 col-xs-1"></div>
 				</div>
 			</div>
-			<div class="cafe-content">
-				<div class="row">
-					<button class="btn btn-danger">전화하기</button>
-					<button class="btn btn-danger">예약하기</button>
+			
+			<div class="col-md-12">
+				<div class="col-md-2"></div>
+				<div class="cafe-content col-md-8">
+					<div class="row">
+						<div class="col-md-4 col-xs-12">
+							<button class="btn btn-danger" style = "margin-bottom: 12px;"><a href="print_advantage.php?cafe_no=<?=$array1[0]?>">혜택받기</a></button>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<button class="btn btn-danger" style = "margin-bottom: 12px;">전화하기</button>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<button class="btn btn-danger" style = "margin-bottom: 12px;">예약하기</button>
+						</div>
+
+					</div>
 				</div>
+				<div class="col-md-2"></div>
 			</div>
+			
 		</div>
 		<div class="col-md-4 col-xs-2"></div>
 	</div>
